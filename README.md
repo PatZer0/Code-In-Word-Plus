@@ -1,5 +1,5 @@
 # Code In Word **Plus**
-**原站地址**：http: //www.codeinword.com
+**原站地址**：http://www.codeinword.com
 
 由于原站不支持HTTPS，且有影响使用效率的弹窗，因此修改一版自用。
 
