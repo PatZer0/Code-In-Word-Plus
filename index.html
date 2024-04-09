@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  
+  <head>
+    <title>CodeInWord Plus|在Word中优雅展现的代码|代码高亮|Word中插入代码|代码格式化</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="CodeInWordPlus,代码高亮,Word,微软Word高亮代码,Word中美化代码">
+    <meta name="description" content="在线生成可以在Word中高亮的代码，支持各类主流语言，代码美化，代码高亮。">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="static/css/SyntaxHighlighter.css">
+    <script language="javascript" src="static/js/shCore.js"></script>
+    <script language="javascript" src="static/js/shBrushCpp.js"></script>--
+    <script language="javascript" src="static/js/shBrushCSharp.js"></script>
+    <script language="javascript" src="static/js/shBrushCss.js"></script>
+    <script language="javascript" src="static/js/shBrushDelphi.js"></script>
+    <script language="javascript" src="static/js/shBrushJava.js"></script>
+    <script language="javascript" src="static/js/shBrushJScript.js"></script>
+    <script language="javascript" src="static/js/shBrushPhp.js"></script>
+    <script language="javascript" src="static/js/shBrushPython.js"></script>
+    <script language="javascript" src="static/js/shBrushRuby.js"></script>
+    <script language="javascript" src="static/js/shBrushSql.js"></script>
+    <script language="javascript" src="static/js/shBrushVb.js"></script>
+    <script language="javascript" src="static/js/shBrushXml.js"></script>
+    <script type="text/javascript" src="static/js/clipboard.min.js"></script>
+    <!-- <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7847413321849151" crossorigin="anonymous"></script> -->
+    <!-- <script data-ad-client="ca-pub-7847413321849151" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+    <link href="static/css/show.css" rel="stylesheet" type="text/css"></head>
+  
+  <body>
+    <style>body { padding-top: 5px; } hr.divider { margin: 5px 0; } .pre-scrollable { max-height: 500px; overflow-y: scroll; } .row { margin-top: 1px; margin-bottom: 1px; } .navbar { background-color: rgb(247, 99, 12); }</style>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="navbar navbar-default navbar-static-top navbar-fixed-top">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" style="color:rgb(255, 255, 255)" href="#">
+                    <span>CodeInWord
+                      <span style="font-weight: bold;">Plus</span></span>
+                  </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+                  <ul class="nav navbar-nav navbar-right"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <!-- 官方公众号 modal // modal-sm <div class="modal fade" id="showQrCodeModal" style="width:100%" style="height:100%" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 350px;height: 350px">
+        <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">小站运营难以为继,打个赏支持下吧!</h4></div>
+        <div class="modal-body">
+        <img src="static/picture/wx_zanshang_code.png" style="width:100%;height:100%;" name="wx_zanshang_code.png"></div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">已确认</button></div>
+        </div>
+        </div>
+        </div>
+        -->
+        <main class="row-fluid" style="height:85%;min-height:600px;">
+          <div class="col-md-5" style="padding:0px;height:100%;">
+            <div class="numberedtextarea-wrapper ">
+              <!-- <textarea id="srccode" placeholder="此处输入源码，选择语言后点击高亮按钮，然后点击复制按钮粘贴到Word中即可" class="form-control common-font-size" style="height:100%;height: 87vh;min-height:600px;padding:10px 10px 10px 30px;border:0;border-right:solid 1px #E5EBEE;border-bottom:solid 1px #eee;border-radius:0;resize: none; outline:none;"></textarea> -->
+              <textarea id="srccode" class="form-control common-font-size" style="height:100%; height: 87vh; min-height:600px; padding:10px 10px 10px 30px; border:0; border-right:solid 1px #E5EBEE; border-bottom:solid 1px #eee; border-radius:0; resize: none; outline:none;" placeholder="此处输入源码，选择语言后点击高亮按钮，右侧结果复制粘贴到word中即可"></textarea>
+            </div>
+          </div>
+          <div class="col-md-7" style="padding:0;position:relative;height:100%;">
+            <div class="form-group form-group-sm">
+              <label class="col-sm-2 control-label" for="formGroupInputSmall">选择语言：</label>
+              <div class="col-sm-2" style="padding-left: 1px;margin-left: 1px;">
+                <select name="fonts" id="languageSelected" class="form-control">
+                  <option value="c++">C, C++</option>
+                  <option value="c#">C#</option>
+                  <option value="css">CSS</option>
+                  <option value="delphi">Delphi, Pascal</option>
+                  <option value="xml">XML</option>
+                  <option value="java">Java</option>
+                  <option value="javascript">Javascript</option>
+                  <option value="php">PHP</option>
+                  <option value="python">Python</option>
+                  <option value="ruby">Ruby</option>
+                  <option value="sql">SQL</option>
+                  <option value="vb">VB</option>
+                  <option value="xml">HTML</option></select>
+              </div>
+              <div class="form-group form-group-sm">
+                <a class="btn btn-primary" style="margin-right:15px;margin-bottom:-5px;" id="startExecute" onclick="formatcode()">高亮</a>
+                <!-- 一键选中按钮 -->
+                <a class="btn btn-primary" style="margin-right:15px;margin-bottom:-5px;" id="selectBtn">一键选中</a>
+                <!-- 复制按钮
+                <a class="btn btn-primary" style="margin-right:15px;margin-bottom:-5px;" id="copyBtn" data-clipboard-target="#formatcode">复制(仅颜色)</a> -->
+            </div>
+            <div id="right-box" class="common-font-size" style="width:100%;height: 87vh;min-height:520px;border:solid 1px #f6f6f6;border-radius:0;resize: none;overflow-y:scroll; outline:none;position:relative;padding-top:5px;">
+              <div class="ro" id="formatcode" style="padding:0px 25px;white-space: pre-line;word-wrap:break-word;"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script language="javascript">
+      document.getElementById('selectBtn').addEventListener('click', function() {
+    var formatCodeDiv = document.getElementById('formatcode');
+
+    if (document.body.createTextRange) { // 对于 IE
+        var range = document.body.createTextRange();
+        range.moveToElementText(formatCodeDiv);
+        range.select();
+    } else if (window.getSelection) { // 对于 Firefox, Chrome, Safari 等
+        var selection = window.getSelection();        
+        var range = document.createRange();
+        range.selectNodeContents(formatCodeDiv);
+        selection.removeAllRanges(); // 清除页面上任何已有的选择
+        selection.addRange(range); // 添加新的选择范围
+    }
+    });
+    </script>
+    <script language="javascript">document.addEventListener("DOMContentLoaded",
+      function() {
+        var srccode = document.getElementById("srccode");
+        var defaultText = `原站地址：http: //www.codeinword.com
+
+由于原站不支持HTTPS，且有影响使用效率的弹窗，因此修改一版自用。
+本网站仅限个人非商业用途使用，请勿用于任何商业用途。
+
+CodeInWord Plus V0.1 (2024-04-09)
+  - 新增一键选中按钮，不需要手动选中，直接Ctrl+C即可
+  - 注释掉原站的弹窗代码，防止影响使用效率
+  - 修改CSS，默认使用“等距更纱黑体”(如果安装)`;
+
+        // 检查是否已经有内容，如果没有，则设置默认文本
+        if (srccode.value.trim() === "") {
+          srccode.value = defaultText;
+        }
+
+        // 为 textarea 添加 focus 事件监听器
+        srccode.addEventListener("focus",
+        function() {
+          // 如果文本是默认文本，则清空
+          if (srccode.value === defaultText) {
+            srccode.value = "";
+          }
+        });
+
+        // 为 textarea 添加 blur 事件监听器
+        srccode.addEventListener("blur",
+        function() {
+          // 如果文本为空，则重新设置为默认文本
+          if (srccode.value.trim() === "") {
+            srccode.value = defaultText;
+          }
+        });
+      });</script>
+    <script language="javascript">var divA = document.getElementById("formatcode");
+      var innerHtml = '<textarea name="code" id="code"  class="c++">   ';
+      innerHtml = innerHtml + $("#srccode").val() + '</textarea>';
+      divA.innerHTML = innerHtml;
+      dp.SyntaxHighlighter.HighlightAll('code', true, false);
+
+      function formatcode() {
+        var srcCode = document.getElementById("srccode");
+        var divA = document.getElementById("formatcode");
+        var innerHtml = '<textarea name="code" id="code"  class="' + $("#languageSelected").val() + '">';
+        innerHtml = innerHtml + $("#srccode").val() + '</textarea>';
+        divA.innerHTML = innerHtml;
+        dp.SyntaxHighlighter.HighlightAll('code', true, false);
+        showQrCode();
+      }</script>
+    <script language="javascript">var clipboard = new ClipboardJS('.copyBtn', {
+        text: function() {
+          //var codeContent= document.getElementsById('format-code'); 
+          return $("#formatcode").val();;
+        }
+      });
+
+      clipboard.on('success',
+      function(e) {
+        alert("复制成功！");
+        console.log(e);
+      });
+
+      clipboard.on('error',
+      function(e) {
+        alert("复制失败！");
+        console.log(e);
+      });
+
+      $(function() {
+        $('#showQrCodeModal').modal('hide')
+      });
+
+      function getCookie(name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg)) return unescape(arr[2]);
+        else return null;
+      }
+
+      function setCookie(name, value, expireTime) {
+        var exp = new Date();
+        exp.setTime(exp.getTime() + expireTime);
+        document.cookie = name + "=" + escape(value) + ";expires=" + exp.toUTCString();
+        return;
+      }
+
+      function showQrCode() {
+        var cookieKey = "showQrcode";
+        var cookieVal = getCookie(cookieKey);
+        if (getCookie(cookieKey) == "1") {
+          return;
+        }
+        var value = "1";
+        setCookie(cookieKey, value, 3600 * 24 * 100);
+        $('#showQrCodeModal').modal('show');
+
+      }</script>
+    <h5 class="page-header"></h5>
+    <footer style="padding:20px;text-align:center;color:#aaa;font-family: Tahoma,&#39;微软雅黑&#39;;">
+      <div style="padding:10px;">
+        <a href="http://www.codeinword.com" style="margin-right:20px;">点我跳转原站点</a>
+        <a href="https://patzer0.com" style="margin-right:20px;">返回 Patrick's Blog</a></div>
+    </footer>
+  </body>
+
+</html>
